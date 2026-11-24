@@ -2,6 +2,8 @@
 
 A practical, technology-agnostic framework for engineering agentic AI systems, from initial problem discovery through production operation and continuous improvement.
 
+📄 **[Download the designed PDF version](agentic-ai-engineering-framework.pdf)** (20 pages, with diagrams and a printable checklist).
+
 The framework organizes the discipline into six interconnected stages, providing guidance on key decisions, engineering patterns, trade-offs, governance considerations and common pitfalls. Use it as a guide when scoping a new agent or workflow, or as a reference when reviewing an existing one.
 
 ---
