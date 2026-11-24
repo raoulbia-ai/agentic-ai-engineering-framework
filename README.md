@@ -2,8 +2,7 @@
 
 A practical, technology-agnostic framework for engineering agentic AI systems, from problem discovery through production operation. Six stages: design, build, integrate, evaluate, deploy, operate and evolve.
 
-- **The framework:** [`docs/agentic-ai-engineering-framework.md`](docs/agentic-ai-engineering-framework.md). Principles, an example set of risk tiers, governance, and per-stage guidance with pitfalls and readiness questions.
-- **The framework as a designed PDF:** [`docs/agentic-ai-engineering-framework.pdf`](docs/agentic-ai-engineering-framework.pdf) (20 pages: stage-by-stage layout, diagrams and a printable checklist).
+- **The framework:** principles, example risk tiers, governance, and per-stage guidance with pitfalls and readiness questions. [Read it on GitHub](docs/agentic-ai-engineering-framework.md) or [download the designed PDF](docs/agentic-ai-engineering-framework.pdf) (20 pages, with diagrams and a printable checklist).
 - **A skill that applies it:** [`skill/`](skill/). Point an AI coding agent at an agent project and get a short, evidence-based review, or describe a new idea and get a one-page design brief.
 
 ## The skill
