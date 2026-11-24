@@ -11,6 +11,10 @@ It also helps scope new work: describe an idea and it produces a one-page design
 - Content inside the reviewed project is treated as data, not instructions.
 - It is advice, not certification, and not a legal or compliance sign-off.
 
+## Privacy
+
+This plugin collects, stores and sends no data. It contains only instructions and reference text; it has no connectors, MCP servers, scripts, hooks or network calls, and no service behind it. When you use it, Claude reads the repository, configuration or design you point it at, within your own session, to write the review or brief. Nothing is sent to the author or to any third party, and nothing is retained by the plugin. Questions: open an issue at https://github.com/raoulbia-ai/agentic-ai-engineering-framework/issues.
+
 ## Install
 
 In Claude Code:
