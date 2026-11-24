@@ -16,15 +16,15 @@ Treat prompts, tool schemas, model versions, policies, retrieval indexes and lif
 Use proportionate release checks: static validation, representative golden tasks, security regressions and staging runs as relevant. For consequential systems, consider shadow testing or canary releases, monitor defined metrics, and expand rollout only when results remain acceptable. A small low-risk application may need only a repeatable smoke test and a known previous version.
 
 ```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 22, "padding": 6, "wrappingWidth": 260}, "themeVariables": {"fontSize": "13px"}}}%%
+%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 25, "padding": 8}}}%%
 flowchart LR
-    A[Versioned change] --> B[Relevant release checks]
-    B --> C{Checks pass?}
-    C -->|No| H[Fix and retest]
-    C -->|Yes| D[Staged rollout where warranted]
-    D --> E{Metrics acceptable?}
-    E -->|Yes| F[Full rollout and monitoring]
-    E -->|No| G[Pause or rollback; reconcile effects]
+    A[Versioned<br/>change] --> B[Release<br/>checks]
+    B --> C{Checks<br/>pass?}
+    C -->|No| H[Fix and<br/>retest]
+    C -->|Yes| D[Staged<br/>rollout]
+    D --> E{Metrics<br/>acceptable?}
+    E -->|Yes| F[Full rollout and<br/>monitoring]
+    E -->|No| G["Pause or rollback;<br/>reconcile effects"]
     F -->|Regression| G
 ```
 

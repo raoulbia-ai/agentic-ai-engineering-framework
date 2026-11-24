@@ -20,17 +20,17 @@ Control patterns determine when the agent plans, acts, observes, revises and sto
 Choose patterns by task shape: flexible loops for exploration, plans for structured multi-step work, and verification for critical requirements. Model-based verification is fallible; non-negotiable permissions and safety invariants need enforceable controls.
 
 ```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 22, "padding": 6, "wrappingWidth": 260}, "themeVariables": {"fontSize": "13px"}}}%%
-flowchart TD
+%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 25, "padding": 8}}}%%
+flowchart LR
     Req[Task / request] --> State[(Task state)]
     State --> CP{Control pattern}
-    CP --> Tool[Tool call validated<br/>against contract]
-    CP --> Ret[Retrieval and provenance-<br/>tagged evidence]
+    CP --> Tool[Validated tool call]
+    CP --> Ret[Retrieval with provenance]
     Tool --> Obs[Observation]
     Ret --> Obs
     Obs --> State
-    CP -->|Stop condition met| Out[Output and<br/>supporting evidence]
-    CP -->|Budget exhausted or<br/>approval needed| Hold[Stop or escalate]
+    CP -->|Stop condition met| Out[Output and evidence]
+    CP -->|Budget exhausted or approval needed| Hold[Stop or escalate]
 ```
 
 ### Multi-agent coordination
@@ -54,14 +54,14 @@ For consequential state changes, use **draft/commit separation** or a dry-run/pr
 An **approval packet** should give a reviewer the proposed action, reason, evidence, expected consequences, risk and available rollback or remediation option. Bind approvals to the specific action and relevant parameters; reject expired or materially changed requests.
 
 ```mermaid
-%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 22, "padding": 6, "wrappingWidth": 260}, "themeVariables": {"fontSize": "13px"}}}%%
-flowchart TD
-    A[Agent proposes an action] --> P["Approval packet: action, reason, evidence, consequences, risk, rollback / remediation"]
-    P --> G{{"Policy / execution service (gate), enforced outside the model"}}
-    G --> R([Reviewer decides on this specific action])
-    R -->|Approved and valid at commit| Y["Gate re-checks scope and authorization, executes exactly once, returns receipt"]
-    R -->|Rejected, expired or invalid| N["Gate records decision and reason; nothing executed; agent holds or escalates"]
-    Y --> L[(Audit log: action, decision and result recorded on both paths)]
+%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 25, "padding": 8}}}%%
+flowchart LR
+    A[Agent proposes<br/>action] --> P[Approval<br/>packet]
+    P --> G{{"Gate<br/>(outside the model)"}}
+    G --> R([Reviewer<br/>decides])
+    R -->|Approved and<br/>valid at commit| Y["Re-check at commit,<br/>execute once, receipt"]
+    R -->|Rejected, expired<br/>or invalid| N["Record reason,<br/>hold or escalate"]
+    Y --> L[(Audit log)]
     N --> L
 ```
 
