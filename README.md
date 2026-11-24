@@ -16,10 +16,31 @@ It is advice, not certification. It does not run or modify the project it review
 
 ### Install
 
-The skill is a folder with a `SKILL.md` and a `references/` directory, which is the format used by agent tools that support skills. Copy `skill/` into your tool's skills directory under the name `agentic-ai-engineering-framework`. For example, for Kiro CLI:
+**Claude Code** (plugin marketplace):
 
 ```
-mkdir -p ~/.kiro/skills
+/plugin install agentic-ai-engineering-framework --marketplace raoulbia-ai/agentic-ai-engineering-framework
+```
+
+On older Claude Code versions, add the marketplace first:
+
+```
+/plugin marketplace add raoulbia-ai/agentic-ai-engineering-framework
+/plugin install agentic-ai-engineering-framework@raoulbia-ai
+```
+
+**Any agent that supports skills** (Codex, Cursor, Gemini CLI, Copilot and others), via the [skills CLI](https://skills.sh):
+
+```
+npx skills add raoulbia-ai/agentic-ai-engineering-framework
+```
+
+**Manual:** the skill is a folder with a `SKILL.md` and a `references/` directory, following the open [Agent Skills](https://agentskills.io) format. Copy `skill/` into your tool's skills directory under the name `agentic-ai-engineering-framework`, for example:
+
+```
+# Claude Code
+cp -r skill ~/.claude/skills/agentic-ai-engineering-framework
+# Kiro CLI
 cp -r skill ~/.kiro/skills/agentic-ai-engineering-framework
 ```
 
