@@ -35,6 +35,12 @@ On older Claude Code versions, add the marketplace first:
 npx skills add raoulbia-ai/agentic-ai-engineering-framework
 ```
 
+To see what the repo contains before installing:
+
+```
+npx skills add raoulbia-ai/agentic-ai-engineering-framework --list
+```
+
 **Manual:** the skill is a folder with a `SKILL.md` and a `references/` directory, following the open [Agent Skills](https://agentskills.io) format. Copy `skill/` into your tool's skills directory under the name `agentic-ai-engineering-framework`, for example:
 
 ```
