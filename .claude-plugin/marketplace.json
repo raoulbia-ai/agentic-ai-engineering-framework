@@ -11,11 +11,16 @@
     {
       "name": "agentic-ai-engineering-framework",
       "description": "Review an AI agent or agentic workflow against a six-stage engineering framework (design, build, integrate, evaluate, deploy, operate), or turn a new agent idea into a one-page design brief.",
-      "source": "./",
-      "strict": false,
-      "skills": ["./skill"],
+      "source": "./skill",
       "license": "MIT",
-      "keywords": ["agents", "agentic-ai", "review", "governance", "evaluation", "design"]
+      "keywords": [
+        "agents",
+        "agentic-ai",
+        "review",
+        "governance",
+        "evaluation",
+        "design"
+      ]
     }
   ]
 }
