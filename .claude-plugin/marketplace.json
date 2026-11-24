@@ -1,0 +1,21 @@
+{
+  "name": "raoulbia-ai",
+  "owner": {
+    "name": "raoulbia-ai"
+  },
+  "metadata": {
+    "description": "Agentic AI Engineering Framework: review agents against a six-stage engineering framework, or scope a new agent.",
+    "version": "0.1.6"
+  },
+  "plugins": [
+    {
+      "name": "agentic-ai-engineering-framework",
+      "description": "Review an AI agent or agentic workflow against a six-stage engineering framework (design, build, integrate, evaluate, deploy, operate), or turn a new agent idea into a one-page design brief.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skill"],
+      "license": "MIT",
+      "keywords": ["agents", "agentic-ai", "review", "governance", "evaluation", "design"]
+    }
+  ]
+}
