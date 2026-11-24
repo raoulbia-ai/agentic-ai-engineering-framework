@@ -47,10 +47,10 @@ Quick searches that make "looked in X, found none" fast and consistent (adapt to
 
 | Looking for | Search for |
 |---|---|
-| Write or execute capability | `write`, `shell`, `exec`, `subprocess`, `rm `, `POST`, `PUT`, `DELETE`, MCP tool names |
+| Write or execute capability | file writes, command or process execution, file deletion, state-changing HTTP methods, MCP tool names |
 | Approval gates | `approve`, `confirm`, `human`, `review`, `dry.?run`, `draft` |
 | Untrusted input handling | `untrusted`, `sanitize`, `escape`, `inject`, `treat .* as data` |
-| Secrets | `token`, `secret`, `password`, `.env`, `chmod`, `umask`, `gitignore` |
+| Secrets | `token`, `secret`, `password`, `.env`, file-permission settings, `gitignore` |
 | Limits and stop rules | `max_`, `budget`, `timeout`, `retry`, `limit`, `stop` |
 | Logging and audit | `audit`, `log`, `trace`, `redact` |
 | Evaluation | `eval`, `golden`, `benchmark`, `tests/`, CI job names |
