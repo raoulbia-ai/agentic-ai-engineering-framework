@@ -22,12 +22,13 @@ Run repeated trials for stochastic behavior. Choose sample sizes appropriate to 
 Prefer deterministic checks for structured outputs and permissions. Where human or model-based evaluators are needed, use explicit rubrics and calibrate against reviewed examples. Investigate disagreement and evaluator bias rather than treating an evaluator score as ground truth.
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 22, "padding": 6, "wrappingWidth": 260}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
-    A[Requirements and acceptance thresholds] --> B[Private evaluation suite]
-    C[Public benchmarks: capability orientation] -.-> B
-    B --> D[Representative tasks, failures and adversarial cases]
-    D --> E[Repeated runs and baseline comparisons]
-    E --> F{Acceptance criteria met?}
+    A[Requirements and<br/>acceptance thresholds] --> B[Private evaluation suite]
+    C[Public benchmarks:<br/>capability orientation] -.-> B
+    B --> D[Representative tasks, failures<br/>and adversarial cases]
+    D --> E[Repeated runs and<br/>baseline comparisons]
+    E --> F{Acceptance<br/>criteria met?}
     F -->|Yes| G[Release decision]
     F -->|No| H[Revise system and retest]
     G --> I[Production monitoring]

@@ -18,6 +18,7 @@ The framework organizes the discipline into six interconnected stages, providing
 | 6. Operate & Evolve | Does it remain effective? | Observability, incidents, improvement, retirement |
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 22, "padding": 6, "wrappingWidth": 260}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart LR
     A[1. Design] --> B[2. Build]
     B --> C[3. Integrate]
@@ -162,16 +163,17 @@ Control patterns determine when the agent plans, acts, observes, revises and sto
 Choose patterns by task shape: flexible loops for exploration, plans for structured multi-step work, and verification for critical requirements. Model-based verification is fallible; non-negotiable permissions and safety invariants need enforceable controls.
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 22, "padding": 6, "wrappingWidth": 260}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
     Req[Task / request] --> State[(Task state)]
     State --> CP{Control pattern}
-    CP --> Tool[Tool call validated against contract]
-    CP --> Ret[Retrieval and provenance-tagged evidence]
+    CP --> Tool[Tool call validated<br/>against contract]
+    CP --> Ret[Retrieval and provenance-<br/>tagged evidence]
     Tool --> Obs[Observation]
     Ret --> Obs
     Obs --> State
-    CP -->|Stop condition met| Out[Output and supporting evidence]
-    CP -->|Budget exhausted or approval needed| Hold[Stop or escalate]
+    CP -->|Stop condition met| Out[Output and<br/>supporting evidence]
+    CP -->|Budget exhausted or<br/>approval needed| Hold[Stop or escalate]
 ```
 
 ### Multi-agent coordination
@@ -195,12 +197,13 @@ For consequential state changes, use **draft/commit separation** or a dry-run/pr
 An **approval packet** should give a reviewer the proposed action, reason, evidence, expected consequences, risk and available rollback or remediation option. Bind approvals to the specific action and relevant parameters; reject expired or materially changed requests.
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 22, "padding": 6, "wrappingWidth": 260}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
-    A[Agent proposes an action] --> P["Approval packet: proposed action, reason and evidence, expected consequences, risk, rollback / remediation"]
+    A[Agent proposes an action] --> P["Approval packet: action, reason, evidence, consequences, risk, rollback / remediation"]
     P --> G{{"Policy / execution service (gate), enforced outside the model"}}
-    G --> R{Reviewer decides on this specific action}
-    R -->|Approved and valid at commit| Y["Gate re-checks scope and authorization at commit, executes exactly once, returns execution receipt"]
-    R -->|Rejected, expired or invalid| N["Gate records decision and reason; nothing is executed; agent holds or escalates"]
+    G --> R([Reviewer decides on this specific action])
+    R -->|Approved and valid at commit| Y["Gate re-checks scope and authorization, executes exactly once, returns receipt"]
+    R -->|Rejected, expired or invalid| N["Gate records decision and reason; nothing executed; agent holds or escalates"]
     Y --> L[(Audit log: action, decision and result recorded on both paths)]
     N --> L
 ```
@@ -254,6 +257,7 @@ Unbounded loops; conflating state and memory; retrying non-idempotent actions bl
 Model Context Protocol (MCP) offers a reusable integration vocabulary: a **host** runs the application, a **client** connects to a **server**, and the server can expose tools, resources and prompts. MCP is an integration mechanism, not a security boundary by itself; hosts, servers and downstream services must enforce appropriate permissions.
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 22, "padding": 6, "wrappingWidth": 260}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart LR
     subgraph Host[Host: agent application]
         Client[MCP client]
@@ -278,6 +282,7 @@ Enforce **trust separation**: system policy and authorized user intent define pe
 Validate tool inputs and outputs, enforce permissions at the execution boundary, protect secrets, isolate tenants and sandbox untrusted execution. Log security-relevant decisions without unnecessarily retaining sensitive content. Select controls according to identified threats and their potential impact.
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 22, "padding": 6, "wrappingWidth": 260}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart LR
     P[System policy] --> Agent[Agent]
     U[Authorized user intent] --> Agent
@@ -325,12 +330,13 @@ Run repeated trials for stochastic behavior. Choose sample sizes appropriate to 
 Prefer deterministic checks for structured outputs and permissions. Where human or model-based evaluators are needed, use explicit rubrics and calibrate against reviewed examples. Investigate disagreement and evaluator bias rather than treating an evaluator score as ground truth.
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 22, "padding": 6, "wrappingWidth": 260}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart TD
-    A[Requirements and acceptance thresholds] --> B[Private evaluation suite]
-    C[Public benchmarks: capability orientation] -.-> B
-    B --> D[Representative tasks, failures and adversarial cases]
-    D --> E[Repeated runs and baseline comparisons]
-    E --> F{Acceptance criteria met?}
+    A[Requirements and<br/>acceptance thresholds] --> B[Private evaluation suite]
+    C[Public benchmarks:<br/>capability orientation] -.-> B
+    B --> D[Representative tasks, failures<br/>and adversarial cases]
+    D --> E[Repeated runs and<br/>baseline comparisons]
+    E --> F{Acceptance<br/>criteria met?}
     F -->|Yes| G[Release decision]
     F -->|No| H[Revise system and retest]
     G --> I[Production monitoring]
@@ -372,6 +378,7 @@ Treat prompts, tool schemas, model versions, policies, retrieval indexes and lif
 Use proportionate release checks: static validation, representative golden tasks, security regressions and staging runs as relevant. For consequential systems, consider shadow testing or canary releases, monitor defined metrics, and expand rollout only when results remain acceptable. A small low-risk application may need only a repeatable smoke test and a known previous version.
 
 ```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 22, "padding": 6, "wrappingWidth": 260}, "themeVariables": {"fontSize": "13px"}}}%%
 flowchart LR
     A[Versioned change] --> B[Relevant release checks]
     B --> C{Checks pass?}
