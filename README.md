@@ -40,7 +40,7 @@ skill/
 
 ## Status
 
-Version 0.1.5, experimental. It has been exercised on a handful of real and sample agent projects and revised after each round. It has not been tested by other users yet; feedback and issues are welcome.
+Version 0.1.6, experimental. It has been exercised on a handful of real and sample agent projects and revised after each round. It has not been tested by other users yet; feedback and issues are welcome.
 
 ## License
 

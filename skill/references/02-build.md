@@ -53,22 +53,14 @@ For consequential state changes, use **draft/commit separation** or a dry-run/pr
 An **approval packet** should give a reviewer the proposed action, reason, evidence, expected consequences, risk and available rollback or remediation option. Bind approvals to the specific action and relevant parameters; reject expired or materially changed requests.
 
 ```mermaid
-sequenceDiagram
-    actor Agent
-    participant Gate as Policy / execution service
-    actor Reviewer
-    participant Audit as Audit log
-    Agent->>Gate: Proposed action and approval packet
-    Gate->>Reviewer: Request approval for specific action
-    alt Approved and authorization valid at commit
-        Reviewer->>Gate: Approve
-        Gate->>Gate: Validate scope and execute once
-        Gate->>Audit: Record action and result
-        Gate-->>Agent: Execution receipt
-    else Rejected, expired or invalid
-        Gate->>Audit: Record decision and reason
-        Gate-->>Agent: Hold or escalate
-    end
+flowchart TD
+    A[Agent proposes an action] --> P["Approval packet: proposed action, reason and evidence, expected consequences, risk, rollback / remediation"]
+    P --> G{{"Policy / execution service (gate), enforced outside the model"}}
+    G --> R{Reviewer decides on this specific action}
+    R -->|Approved and valid at commit| Y["Gate re-checks scope and authorization at commit, executes exactly once, returns execution receipt"]
+    R -->|Rejected, expired or invalid| N["Gate records decision and reason; nothing is executed; agent holds or escalates"]
+    Y --> L[(Audit log: action, decision and result recorded on both paths)]
+    N --> L
 ```
 
 ### Grounding and retrieval
