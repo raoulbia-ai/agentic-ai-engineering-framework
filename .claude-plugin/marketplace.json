@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Agentic AI Engineering Framework: review agents against a six-stage engineering framework, or scope a new agent.",
-    "version": "0.1.6"
+    "version": "0.1.7"
   },
   "plugins": [
     {
