@@ -13,10 +13,9 @@ Build this from the agent config files (tool lists, allow rules, MCP settings). 
 | Agent | Stated role / "must not" | Tools it holds (write, shell, MCP write) | Enforced outside the model? | Gap |
 |---|---|---|---|---|
 
-When the runtime's defaults are not visible (for example an empty allow list), write "unknown: prompted by default?" in the "Enforced outside the model?" column, rate the finding at the lower of the two severities, and add the question to the owner list. Do not assume either way.
+When the runtime's defaults are not visible (for example an empty allow list, which usually means the runtime prompts the user per call — a control that depends on the user not auto-approving), write "unknown: prompted by default?" in the "Enforced outside the model?" column, rate the finding at the lower of the two severities, and add the question to the owner list. If the runtime prompt is confirmed, record it as "prompted by default (runtime)"; do not assume either way if it isn't.
 
 - A role that says "never edit" but holds a write or shell tool is a finding unless something outside the model blocks it.
-- An empty allow list usually means the runtime prompts the user per call. That is a control, but it depends on the user not auto-approving. Record it as "prompted by default (runtime)" and list it as a question if the runtime is not visible.
 - Check which agents load MCP servers from a shared config, and what credentials those servers hold.
 
 ## Delegation and handoffs
@@ -41,4 +40,4 @@ Hooks run code on events (prompt, tool use, file save, session start). Treat the
 
 ## Evaluation for teams of agents
 
-Look for tests of routing (does the right agent get the task), of the workflow (for example RED/GREEN/REFACTOR order), and of each hook. A team with no routing or workflow evaluation cannot show the benefit of having several agents.
+Look for tests of routing (does the right agent get the task), of the workflow (for example RED/GREEN/REFACTOR order), and of each hook — see Stage 4 (`04-evaluate.md`) for why this matters.

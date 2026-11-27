@@ -2,7 +2,7 @@
   "name": "agentic-ai-engineering-framework",
   "displayName": "Agentic AI Engineering Framework",
   "description": "Review an AI agent or agentic workflow against a six-stage engineering framework (design, build, integrate, evaluate, deploy, operate), or turn a new agent idea into a one-page design brief.",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": {
     "name": "raoulbia-ai",
     "url": "https://github.com/raoulbia-ai"

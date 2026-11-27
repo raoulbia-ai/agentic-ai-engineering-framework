@@ -1,7 +1,7 @@
 ---
 name: agentic-ai-engineering-framework
 description: "Review an AI agent or agentic workflow (repo, config or design) against a six-stage engineering framework (design, build, integrate, evaluate, deploy, operate) and get a short, evidence-based report of the top gaps with concrete next steps. Also turns a new agent idea into a one-page design brief: is an agent warranted, architecture, autonomy limits, first experiment. Read-only advice, not certification. Triggers: 'review my agent', 'agent readiness review', 'is my agent production ready', 'is this a good agent use case', 'agent design review', 'scope a new agent', 'review this agent repo', 'agent checklist'. Exclude: choosing an SDK or vendor, general code review, legal or compliance sign-off."
-version: 0.1.7
+version: 0.1.8
 author: raoulbia-ai
 ---
 
@@ -69,5 +69,5 @@ Walk Stage 1 (`references/01-design.md`) with the user, state the risk tier, and
 
 ## Depends On / Provides
 
-- Depends on: read access to the target repo. Optional: `repo-scanner` for a first map of an unfamiliar repo.
+- Depends on: read access to the target repo. Optional: a repo-scanning tool, if one is available in your environment, for a first map of an unfamiliar repo.
 - Provides: a review report or a design brief, as text for the user. It does not write to the target.

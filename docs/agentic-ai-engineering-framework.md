@@ -38,8 +38,8 @@ The stages are engineering concerns, not a rigid waterfall. Small projects may m
 
 - **Simplicity:** Choose the simplest architecture that satisfies the requirements. Additional tools, models, agents and orchestration must earn their place.
 - **Proportionality:** The level of architectural complexity, documentation, testing and oversight should be proportionate to the system's autonomy, risk and potential impact.
-- **Technology independence:** Keep engineering decisions, contracts and evaluation criteria applicable across models, vendors, SDKs and infrastructure wherever practical.
-- **Evidence-driven engineering:** Use experiments, evaluations and production observations rather than assumptions or successful demos alone.
+- **Evidence over demos:** Use experiments, evaluations and production observations rather than assumptions or successful demos alone.
+- **Enforce outside the model:** Permissions and safety invariants need controls the model cannot talk its way around.
 - **Bounded autonomy:** Define what an agent may do, what it must not do and when it must stop or escalate.
 
 ### Risk Tiers
